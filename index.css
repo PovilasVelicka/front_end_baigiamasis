@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+body{
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: #ffffff;
+    border: 1px solid black;
+    align-items: center;
+}
+
+header img {
+    height: 70px;
+    width: 70px;
+    margin: auto 20px;
+}
+
+header h1 {
+    width: 100%;
+}
+
+header a {    
+    width: 150px;
+    margin: auto 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+body {  
+    height: 100vh;
+    background: linear-gradient(rgb(234, 230, 255), rgb(255, 255, 255)) no-repeat;
+}
+
+
+form {    
+    margin: 100px auto;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+fieldset{
+    display: flex;
+    flex-flow: column nowrap;
+    padding-bottom: 50px;
+}
+
+fieldset * {
+    padding: 10px;
+    flex: 1;
+    margin: 2px;
+   
+}
+fieldset button{
+    margin-top: 30px;   
+}
+
+footer {
+    border: 1px solid black;
+    width: 100%;
+    min-height: 100px;
+    position: absolute;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 20px auto;
+    background-color: #ffffff;
+}
+
+.cookies {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 800px;
+    margin: auto;
+    align-items: center;
+}
+
+.cookies p {
+    text-align: center;
+}
+
+.cookies button {
+    padding: 10px 30px;
+    margin-bottom: 10px;
+    display: block;
+}

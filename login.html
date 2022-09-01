@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO app</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <img src="./images/ToDo-List.ico" alt="logo">
+        <h1>YOUR TO DO list</h1>     
+        <a href="./index.html">Home</a>
+    </header>
+    <nav></nav>
+    <main>
+        <article>
+            <form action="https://localhost:7171/api/Auth" method="get">
+                <fieldset>
+                    <legend>Login in to Your TO DO list</legend>
+                    <label for="username">User name</label>
+                    <input type="text" required="true" name="username" id="username">
+                    <label for="password">Password</label>
+                    <input type="password" required="true" name="password" id="password">
+                    <button id="logIn" type="submit">Login</button>
+                </fieldset>
+            </form>
+        </article>
+    </main>
+    <footer>
+        <div class="cookies">
+            <p>We use cookies to personalize content and ads to provide social media features and to analyze our
+                traffic.
+                By clicking "Accept Cookies", exiting this banner or continuing to use our site, you accept our use of
+                cookies. You can change your preferences in
+                "Cookie Settings"</p>
+            <button id="acceptCookie" type="submit">Accept Cookie</button>
+        </div>
+    </footer>
+    <script src="./index.js"></script>
+</body>
+
+</html>
