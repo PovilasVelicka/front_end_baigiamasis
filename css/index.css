@@ -1,9 +1,7 @@
 * {
     box-sizing: border-box;
     font-family: Georgia, 'Times New Roman', Times, serif;
-}
-body{
-    margin: 0;
+    /* border: 1px solid black; */
 }
 
 header {
@@ -24,29 +22,48 @@ header img {
 
 header h1 {
     width: 100%;
+    height: 50px;
+    line-height: 50px;
 }
 
-header a {    
-    width: 150px;
-    margin: auto 20px;
+header a {
+    min-width: 150px;
+    height: 50px;
+    line-height: 50px;
+    margin: auto 10px;
     text-align: center;
     text-transform: uppercase;
 }
 
-body {  
+body {
+    margin: 0;
     height: 100vh;
     background: linear-gradient(rgb(234, 230, 255), rgb(255, 255, 255)) no-repeat;
 }
 
+main {
+    max-width: 1200px;
+    
+    margin: 0 auto;
+    height: calc(100vh - 101px);
+    display: flex;
+    flex-flow: column nowrap;
 
-form {    
-    margin: 100px auto;
+}
+article{
+    flex: 1;
+    /* border: 1px solid black;
+    background-color: azure; */
+}
+
+form {
     max-width: 500px;
     padding: 20px;
     border-radius: 10px;
+    margin: 0 auto;
 }
 
-fieldset{
+fieldset {
     display: flex;
     flex-flow: column nowrap;
     padding-bottom: 50px;
@@ -56,10 +73,11 @@ fieldset * {
     padding: 10px;
     flex: 1;
     margin: 2px;
-   
+
 }
-fieldset button{
-    margin-top: 30px;   
+
+fieldset button {
+    margin-top: 30px;
 }
 
 footer {

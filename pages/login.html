@@ -6,28 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TO DO app</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 
 <body>
     <header>
-        <img src="./images/ToDo-List.ico" alt="logo">
-        <h1>YOUR TO DO list</h1>
-        <a href="./index.html">Home</a>
+        <img src="../images/ToDo-List.ico" alt="logo">
+        <h1>YOUR TO DO list</h1>     
+        <a href="../index.html">Home</a>
     </header>
     <nav></nav>
     <main>
         <article>
             <form action="https://localhost:7171/api/Auth" method="get">
                 <fieldset>
-                    <legend>Registration form</legend>
+                    <legend>Login in to Your TO DO list</legend>
                     <label for="username">User name</label>
                     <input type="text" required="true" name="username" id="username">
                     <label for="password">Password</label>
                     <input type="password" required="true" name="password" id="password">
-                    <label for="email">Email</label>
-                    <input type="email" required="true" name="email" id="email">
-                    <button id="registration" type="submit">Register</button>
+                    <button id="logIn" type="submit">Login</button>
                 </fieldset>
             </form>
         </article>
@@ -42,7 +40,7 @@
             <button id="acceptCookie" type="submit">Accept Cookie</button>
         </div>
     </footer>
-    <script src="./index.js"></script>
+    <script src="../js/index.js"></script>
 </body>
 
 </html>
