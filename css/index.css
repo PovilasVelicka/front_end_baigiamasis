@@ -90,6 +90,7 @@ footer {
     bottom: 0;
     padding: 20px auto;
     background-color: #ffffff;
+    display: none;
 }
 
 .cookies {
@@ -108,4 +109,20 @@ footer {
     padding: 10px 30px;
     margin-bottom: 10px;
     display: block;
+}
+
+.notify{
+    position: fixed;   
+    border: 1px solid black;
+    top: 90px;
+    opacity: 0;
+    transition: all 1s;
+    line-height: 50px;
+    background-color: #00ff00;
+    max-width:inherit;
+    width: 80%;
+    left:10%;
+    box-shadow: 2px 10px 10px grey;
+    border-radius: 10px;
+    text-align: center; 
 }

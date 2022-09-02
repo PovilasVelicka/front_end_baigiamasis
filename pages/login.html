@@ -18,7 +18,7 @@
     <nav></nav>
     <main>
         <article>
-            <form action="https://localhost:7171/api/Auth" method="get">
+            <form >
                 <fieldset>
                     <legend>Login in to Your TO DO list</legend>
                     <label for="username">User name</label>
@@ -26,10 +26,12 @@
                     <label for="password">Password</label>
                     <input type="password" required="true" name="password" id="password">
                     <button id="logIn" type="submit">Login</button>
+                    <a href="./registration.html">Register new account</a>
                 </fieldset>
             </form>
         </article>
     </main>
+
     <footer>
         <div class="cookies">
             <p>We use cookies to personalize content and ads to provide social media features and to analyze our
@@ -38,9 +40,14 @@
                 cookies. You can change your preferences in
                 "Cookie Settings"</p>
             <button id="acceptCookie" type="submit">Accept Cookie</button>
+            
         </div>
     </footer>
-    <script src="../js/index.js"></script>
+
+
+    <script type="text/javascript" src="../js/index.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
+
 </body>
 
 </html>
