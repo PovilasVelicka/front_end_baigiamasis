@@ -17,9 +17,9 @@ document.querySelector('form').addEventListener('submit', (event) => {
         .then(res => {
             if (res.ok) {
                 showNotify('YOUR REGISTRATION SUCESSFUL!', _messageStyles.information)
-                document.location.href='./pages/login.html'
+                document.location.href='./login.html'
             } else {
-                throw res
+                throw Error(res) 
             }
         })
         .then(data => console.log(data))
