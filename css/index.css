@@ -14,26 +14,44 @@ header {
     align-items: center;
 }
 
-header img {
+header * {
     height: 70px;
-    width: 70px;
-    margin: auto 20px;
+    margin: auto 10px;
+    min-width: 150px;
 }
+
+header img {   
+    min-width: auto; 
+    width: 70px ;  
+}
+
 
 header h1 {
     width: 100%;
-    height: 50px;
-    line-height: 50px;
+    line-height: 70px;
+    padding-left: 10px;
 }
 
-header a {
-    min-width: 150px;
-    height: 50px;
-    line-height: 50px;
-    margin: auto 10px;
+header a { 
+    line-height: 70px;
     text-align: center;
     text-transform: uppercase;
 }
+
+.user-info {
+    display: flex;
+    flex-flow: column nowrap;
+
+ 
+    
+}
+
+.user-info span {
+    display: inline-block;
+    flex: 1;
+    text-align: center;
+}
+
 
 body {
     margin: 0;
@@ -43,14 +61,15 @@ body {
 
 main {
     max-width: 1200px;
-    
+
     margin: 0 auto;
     height: calc(100vh - 101px);
     display: flex;
     flex-flow: column nowrap;
 
 }
-article{
+
+article {
     flex: 1;
     /* border: 1px solid black;
     background-color: azure; */
@@ -111,18 +130,18 @@ footer {
     display: block;
 }
 
-.notify{
-    position: fixed;   
+.notify {
+    position: fixed;
     border: 1px solid black;
     top: 90px;
     opacity: 0;
     transition: all 1s;
     line-height: 50px;
     background-color: #00ff00;
-    max-width:inherit;
+    max-width: inherit;
     width: 80%;
-    left:10%;
+    left: 10%;
     box-shadow: 2px 10px 10px grey;
     border-radius: 10px;
-    text-align: center; 
+    text-align: center;
 }

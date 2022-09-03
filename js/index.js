@@ -28,8 +28,9 @@ window.onload = () => {
         }
     }
     else {
-        if (document.getElementById('userInfo')) {
-            document.getElementById('userInfo').innerHTML = `${_userInformation.userName}<br/>${_userInformation.email}`
+        if (document.getElementById('userName')) {
+            document.getElementById('userName').innerHTML = `${_userInformation.userName}`
+            document.getElementById('userEmail').innerHTML = `${_userInformation.email}`
         }
     }
 }
