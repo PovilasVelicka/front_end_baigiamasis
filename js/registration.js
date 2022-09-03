@@ -8,11 +8,7 @@ document.querySelector('form').addEventListener('submit', (event) => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-            "userName": data.username,
-            "password": data.password,
-            "email": data.email
-        })
+        body: JSON.stringify(Object.fromEntries(new FormData(event.target)))
     })
         .then(res => {
             if (res.ok) {
