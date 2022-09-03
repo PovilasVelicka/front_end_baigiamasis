@@ -1,0 +1,72 @@
+article {
+    display: flex;
+}
+
+.article-menu {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 10px;
+}
+
+.article-menu button {
+    width: 150px;
+    height: 50px;
+    margin: 7px;
+}
+
+.left-aside {
+    display: inline-flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    
+    background-color: #EBEDED;
+
+}
+
+
+.left-aside div {
+    max-width: 500px;
+    width: 100%;
+    padding: 5px 20px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.left-aside .list-item:hover{
+    background-color: #717171;
+}
+
+.left-aside div span {
+    width: 70px;
+    padding: 10px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.left-aside div a {
+    flex: 1px;
+    padding: 10px;
+}
+
+.left-aside div input {
+    flex: 1px;
+    padding: 10px;
+    border-radius: 10px;    
+}
+
+.circle-holder {
+   height: 100px;
+   width: 10px;
+}
+
+
+
+.todo-list {
+    display: flex;
+    flex-flow: column nowrap;
+    border: 1px solid #CDCDCD;
+}
+
+.todo-list header {
+    height: 150px;
+    background-color: blueviolet;
+}

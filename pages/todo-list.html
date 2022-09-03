@@ -7,33 +7,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TO DO app</title>
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/todo-list.css">
 </head>
 
 <body>
     <header>
         <img src="../images/ToDo-List.ico" alt="logo">
-        <h1>YOUR TO DO list</h1>     
-          <div class="user-info">
+        <h1>YOUR TO DO list</h1>
+        <div class="user-info">
             <span id="userName"> </span>
             <span id="userEmail"> </span>
         </div>
         <a id="logOff" href="../index.html">Log off</a>
-      
-    </header>
-    
-    <main>
-        <article>
-            <nav class="article-menu">
-                <button id="" type="submit">New</button>
-                <button id="" type="submit">Edit</button>
-                <button id="" type="submit">Delete</button>
-            </nav>
-            <section>
 
-            </section>
-            
+    </header>
+
+    <main>
+        <aside class="left-aside">
+            <div class="circle-holder"></div>
+
+            <div>
+                <input type="search" name="searchList" id="searchList" placeholder="Search">
+            </div>
+            <div class="list-item">
+                <a href="">My Day</a>
+                <span>5</span>
+            </div>
+            <div class="list-item">
+                <a href="">My Day</a>
+                <span>5</span>
+            </div>
+            <div class="list-item">
+                <a href="">My Day</a>
+                <span>5</span>
+            </div>
+        </aside>
+        <article class="todo-list">
+            <header>
+
+            </header>
+            <div clas="todo-item">
+    <input type="radio" name="" id="">
+    <span>Kavos</span>
+            </div>
+
         </article>
+        <aside class="right-aside">
+
+        </aside>
     </main>
     <footer>
         <div class="cookies">
