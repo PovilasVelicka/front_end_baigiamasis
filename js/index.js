@@ -25,15 +25,53 @@ window.onload = () => {
             || document.location.href.endsWith('/index.html')
         )) {
             document.location.href = '../pages/login.html';
-            
+
         }
     }
-    else{
-        if(document.getElementById('userInfo')){
+    else {
+        if (document.getElementById('userInfo')) {
             document.getElementById('userInfo').innerHTML = `${_userInformation.userName}<br/>${_userInformation.email}`
         }
-        
     }
+}
+
+
+const fetchForm = (formEvent, ifOkMethod, ifErrorMethod) => {
+    formEvent.preventDefault()
+    fetch(
+        requestInit(formEvent),
+        requestInfo(formEvent)
+    ).then(async res => {
+        if (!res.ok) {
+            const text = await res.text();
+            throw new Error(text);
+        } else {
+            return res.text()
+        }
+    }).then(data => {
+        ifOkMethod(data ? JSON.parse(data) : {})
+    }).catch(err => {
+        ifErrorMethod(err)
+    })
+}
+
+const requestInfo = (formEvent) => {
+    if (formEvent.target.method === 'get') return null
+    return (formEvent.target.action, {
+        method: formEvent.target.method,
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(Object.fromEntries(new FormData(formEvent.target)))
+    })
+}
+
+const requestInit = (formEvent) => {
+    if (formEvent.target.method !== 'get') return formEvent.target.action
+    const data = Object.fromEntries(new FormData(formEvent.target))
+    return formEvent.target.action + '?' + Object.keys(data).map(function (k) {
+        return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+    }).join('&')
 }
 
 // to use it setOnLoadWindowNotify('your text here',_messageStyles.complete)
