@@ -1,6 +1,5 @@
 let _userInformation = null;
 const _messageStyles = { complete: 'ok', information: 'info', error: 'err' }
-const _apiUrl = 'https://localhost:7171'
 
 document.getElementById('acceptCookie').addEventListener('click', () => {
     sessionStorage.setItem('accepted_cookies', true)
