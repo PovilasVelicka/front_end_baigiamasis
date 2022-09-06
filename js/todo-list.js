@@ -6,14 +6,16 @@ let toDoGroupedItems;
 
 window.addEventListener('load', () => refreshItemsFromApi(updateDocumentVeiw))
 
+document.getElementById('createTodo').addEventListener('click', () => document.location.href = './todo-create.html')
+
 document.getElementById('deleteTodo').addEventListener('click', () => {
     document
         .querySelectorAll('.todo-radio')
         .forEach(r => {
             if (r.checked) {
                 if (confirm('Are You shure you want to delete ToDo item?')) {
-                    deleteToDoItem(r.id, 'ToDo item deleted sucessfuly!')                    
-                }                
+                    deleteToDoItem(r.id, 'ToDo item deleted sucessfuly!')
+                }
             }
         })
 })
@@ -23,8 +25,8 @@ document.getElementById('editTodo').addEventListener('click', () => {
         .querySelectorAll('.todo-radio')
         .forEach(r => {
             if (r.checked) {
-                sessionStorage.setItem(`${_userInformation.id}selectedToDoItem`, r.id) 
-                document.location.href = './todo-edit.html'        
+                sessionStorage.setItem(`${_userInformation.id}selectedToDoItem`, r.id)
+                document.location.href = './todo-edit.html'
             }
         })
 })

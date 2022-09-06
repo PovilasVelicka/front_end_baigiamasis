@@ -30,17 +30,20 @@
             <header>
 
             </header>
-            <form action="https://localhost:7171/api/ToDo" method="post">
+            <form>
                 <fieldset>
                     <legend>Create new ToDo item</legend>
                     <input id="userId" type="text" name="userId" id="userId" style="display: none;">
+                    
+                    <input type="hidden" name="id" id="todoId">
+                    
                     <label for="type">List type</label>
-                    <input id="todoType" required="true" type="text" name="type" id="type">
+                    <input id="type" required="true" type="text" name="type">
                     <label for="endDate">End date</label>
                     <input required="true" type="datetime-local" name="endDate" id="endDate">
                     <label for="content">ToDo content</label>
                     <!-- <input required="true" type="text" name="content" id="content"> -->
-                    <textarea name="content" id="content" cols="30" rows="10"></textarea>
+                    <textarea name="content" id="content" cols="30" rows="10"> </textarea>
                     <button id="submit" type="submit">Create ToDo item</button>
                     <div><a href="./todo-list.html">Back</a></div>
                 </fieldset>
