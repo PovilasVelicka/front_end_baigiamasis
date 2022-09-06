@@ -1,19 +1,44 @@
-let _selectedIndex = 0;
-const _selectedListType = () => sessionStorage.getItem('selectedListType')
+
+
+const refreshItemsFromApi = (refreshMethod) => { apiRequest(_toDoApiUrl, null, refreshMethod, errorMessage) }
+const deleteToDoItem = (id, ifOkMethod) => { apiRequest(_toDoApiUrl + '/' + id, { method: 'DELETE' }, itemDeletedComplete, errorMessage) }
 let toDoGroupedItems;
+
+window.addEventListener('load', () => refreshItemsFromApi(updateDocumentVeiw))
+
+document.getElementById('deleteTodo').addEventListener('click', () => {
+    document
+        .querySelectorAll('.todo-radio')
+        .forEach(r => {
+            if (r.checked) {
+                if (confirm('Are You shure you want to delete ToDo item?')) {
+                    deleteToDoItem(r.id, 'ToDo item deleted sucessfuly!')                    
+                }                
+            }
+        })
+})
+
+document.getElementById('editTodo').addEventListener('click', () => {
+    document
+        .querySelectorAll('.todo-radio')
+        .forEach(r => {
+            if (r.checked) {
+                sessionStorage.setItem(`${_userInformation.id}selectedToDoItem`, r.id) 
+                document.location.href = './todo-edit.html'        
+            }
+        })
+})
+
 document.getElementById('logOff').addEventListener('click', () => {
     sessionStorage.removeItem('user-info')
     document.location.reload()
 })
 
-window.addEventListener('load', () => refreshItemsFromApi(updateDocumentVeiw))
-
-const showToDoItem = (id, showMethod) => apiRequest(_toDoApiUrl + '/' + id, null, showMethod, errorMessage)
-const refreshItemsFromApi = (refreshMethod) => { apiRequest(_toDoApiUrl, null, refreshMethod, errorMessage) }
-const deleteToDoItem = (id, completeMessage) => { apiRequest(_toDoApiUrl + '/' + id, null, completeMessage, errorMessage) }
-
 function updateDocumentVeiw(todoItems) {
-    toDoGroupedItems = groupBy(todoItems.filter(x => x.userId === _userInformation.id), 'type')
+    toDoGroupedItems = groupBy(
+        todoItems.filter(x => x.userId === _userInformation.id),
+        'type'
+    )
     showToDoItems()
     showToDoListItems()
 }
@@ -29,8 +54,7 @@ function showToDoItems() {
         const link = document.createElement('a')
         div.addEventListener('click', (e) => {
             e.className = 'list-item selected';
-            const type = e.target.innerText
-            sessionStorage.setItem('selectedListType', e.target.innerText)
+            sessionStorage.setItem(`${_userInformation.id}selectedListType`, e.target.innerText)
             showToDoListItems(e.target.innerText)
         })
         const span = document.createElement('span')
@@ -46,19 +70,48 @@ function showToDoListItems(items) {
     removeChildElements('todoItems', 'todo-item')
     const holder = document.getElementById('todoItems')
     for (i = 0; i < Object.keys(toDoGroupedItems).length; i++) {
-        if (Object.keys(toDoGroupedItems)[i] = _selectedListType) {
-            for (y = 0; y < Object.values(toDoGroupedItems)[i].length; y++) {
-                const div = document.createElement('div')
-                const radio = document.createElement('input')
-                const span = document.createElement('span')
+        if (Object.keys(toDoGroupedItems)[i] === selectedListType()) {
+            for (y = 0; y < Object.values(
+                toDoGroupedItems)[i].sort(function (a, b) {
+                    if (a.endDate < b.endDate) { return -1; }
+                    if (a.endDate > b.endDate) { return 1; }
+                }).length; y++) {
 
-                div.className = 'todo-item'
+                const todoItem = document.createElement('div')
+                todoItem.className = 'todo-item'
+
+                const todoHeader = document.createElement('div')
+                todoHeader.className = 'todo-item-header'
+
+                const radio = document.createElement('input')
                 radio.setAttribute('type', 'radio')
-                radio.setAttribute('id', Object.values(toDoGroupedItems)[i].id)
-                div.append(radio)
-                span.textContent = Object.values(toDoGroupedItems)[i].type
-                div.append(span)
-                holder.append(div)
+                radio.setAttribute('id', Object.values(toDoGroupedItems)[i][y].id)
+                radio.setAttribute('name', 'todoItem')
+                radio.className = 'todo-radio'
+
+                const todoType = document.createElement('span')
+                todoType.textContent = Object.values(toDoGroupedItems)[i][y].type
+                todoType.className = 'type-field'
+
+                const todoEndDate = document.createElement('span')
+                todoEndDate.textContent = new Date(
+                    Object.values(toDoGroupedItems)[i][y].endDate)
+                    .toLocaleString('lt-LT', { year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit" })
+                todoEndDate.className = 'end-date-field'
+
+                todoHeader.append(radio)
+                todoHeader.append(todoType)
+                todoHeader.append(todoEndDate)
+
+                todoItem.append(todoHeader)
+
+                const todoContent = document.createElement('div')
+                todoContent.classList = 'content-field'
+                todoContent.innerHTML = Object.values(toDoGroupedItems)[i][y].content.replaceAll('\n', '<br/><hr>')
+                todoItem.append(todoContent)
+
+                holder.append(todoItem)
+
             }
         }
     }
@@ -68,3 +121,7 @@ function errorMessage(errMessage) {
     showNotify(errMessage, _messageStyles.error)
 }
 
+function itemDeletedComplete() {
+    showNotify('ToDo item deleted sucessfuly', _messageStyles.complete)
+    refreshItemsFromApi(updateDocumentVeiw)
+}
