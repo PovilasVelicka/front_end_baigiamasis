@@ -1,6 +1,7 @@
 let _userInformation = null;
 const _toDoApiUrl = 'https://localhost:7171/api/ToDo'
 const _messageStyles = { complete: 'ok', information: 'info', error: 'err' }
+const selectedListType = () => sessionStorage.getItem(`${_userInformation === null ? '' : _userInformation.id}selectedListType`)
 
 document.getElementById('acceptCookie').addEventListener('click', () => {
     sessionStorage.setItem('accepted_cookies', true)
