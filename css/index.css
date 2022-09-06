@@ -4,14 +4,26 @@
     /* border: 1px solid black; */
 }
 
-body header {
-    width: 100%;
+body {
+    display: flex;
+    flex-flow: column;
+    margin: 0;
+    background: linear-gradient(rgb(234, 230, 255), rgb(255, 255, 255)) no-repeat;
+    height: 100vh;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+body header {   
     height: 100px;
     display: flex;
     flex-flow: row nowrap;
     background-color: #ffffff;
     border: 1px solid black;
-    
 }
 
 body header * {
@@ -52,23 +64,12 @@ body header a {
 }
 
 
-body {
-    margin: 0;
-    background: linear-gradient(rgb(234, 230, 255), rgb(255, 255, 255)) no-repeat;
-    height: 100vh;
-}
-
-main {
-    display: flex;
-    flex-flow: row nowrap;
-    
-}
 
 article {
     flex: 2;
     max-width: 1500;
-    margin: 0 auto;
-    height: calc(100vh - 101px);
+    /* margin: 0 auto; */
+    /* height: calc(100vh - 101px); */
 }
 
 aside {
@@ -86,9 +87,9 @@ form {
 
 fieldset {
     width: 100%;
-    display: inline-flex ;
+    display: inline-flex;
     flex-flow: column nowrap;
-    padding-bottom: 50px;   
+    padding-bottom: 50px;
 }
 
 fieldset * {

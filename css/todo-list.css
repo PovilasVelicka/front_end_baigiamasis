@@ -2,14 +2,12 @@ article {
     display: flex;
 }
 
-
-
 .left-aside,
 .right-aside {
     display: inline-flex;
     flex-flow: column nowrap;
     align-items: flex-end;
-    background-color: #EBEDED;
+    background-color: #297FB8;
 }
 
 
@@ -19,6 +17,8 @@ article {
     padding: 5px 20px;
     display: flex;
     flex-flow: row nowrap;
+    color:#FFFFFF;
+    
 }
 
 .left-aside .list-item:hover {
@@ -30,6 +30,7 @@ article {
     padding: 10px;
     text-align: right;
     cursor: pointer;
+   
 }
 
 .left-aside .list-item a {
@@ -60,23 +61,16 @@ article {
     height: 100px;
     border: 0px none;
     background-image: url('../images/task_management.svg');
-    background-color: #EBEDED;
+    background-color: #297FB8;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
-
-
-
-
 }
 
 .article-menu {
     display: flex;
     flex-flow: row wrap;
     padding: 10px;
-
-
 }
 
 .article-menu button {
