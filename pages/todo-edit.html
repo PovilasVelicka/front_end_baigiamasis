@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO app</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/todo-list.css">
+</head>
+
+<body>
+    <header>
+        <img src="../images/ToDo-List.ico" alt="logo">
+        <h1>YOUR TO DO list</h1>
+        <div class="user-info">
+            <span id="userName"> </span>
+            <span id="userEmail"> </span>
+        </div>
+        <a id="logOff" href="../index.html">Log off</a>
+
+    </header>
+
+    <main>
+        <aside class="left-aside">
+
+        </aside>
+        <article class="todo-list">
+            <header>
+
+            </header>
+            <form action="https://localhost:7171/api/ToDo" method="post">
+                <fieldset>
+                    <legend>Create new ToDo item</legend>
+                    <input id="userId" type="text" name="userId" id="userId" style="display: none;">
+                    <label for="type">List type</label>
+                    <input id="todoType" required="true" type="text" name="type" id="type">
+                    <label for="endDate">End date</label>
+                    <input required="true" type="datetime-local" name="endDate" id="endDate">
+                    <label for="content">ToDo content</label>
+                    <!-- <input required="true" type="text" name="content" id="content"> -->
+                    <textarea name="content" id="content" cols="30" rows="10"></textarea>
+                    <button id="submit" type="submit">Create ToDo item</button>
+                    <div><a href="./todo-list.html">Back</a></div>
+                </fieldset>
+            </form>
+
+
+
+        </article>
+        <aside class="right-aside">
+
+        </aside>
+    </main>
+    <footer>
+        <div class="cookies">
+            <p>We use cookies to personalize content and ads to provide social media features and to analyze our
+                traffic.
+                By clicking "Accept Cookies", exiting this banner or continuing to use our site, you accept our use of
+                cookies. You can change your preferences in
+                "Cookie Settings"</p>
+            <button id="acceptCookie" type="submit">Accept Cookie</button>
+        </div>
+    </footer>
+    <script type="text/javascript" src="../js/index.js"></script>
+    <script type="text/javascript" src="../js/todo-edit.js"></script>
+</body>
+
+</html>
