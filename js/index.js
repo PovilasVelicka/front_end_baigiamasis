@@ -8,6 +8,7 @@ document.getElementById('acceptCookie').addEventListener('click', () => {
     document.querySelector('footer').style = ('display: none;')
 })
 
+
 window.onload = () => {
     if (!sessionStorage.getItem('accepted_cookies')) {
         document.querySelector('footer').style = ('display: block;')

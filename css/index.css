@@ -116,6 +116,22 @@ footer {
     display: none;
 }
 
+.about{
+    text-align: center;
+    margin:150px auto;
+
+}
+.about a{
+    display: block;
+    margin: 30px auto;
+    border-radius: 10px;
+    background-color: #FF0000;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
 .cookies {
     display: flex;
     flex-flow: column nowrap;
