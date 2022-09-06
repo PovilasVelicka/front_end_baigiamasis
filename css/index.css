@@ -75,15 +75,17 @@ aside {
 
 form {
     max-width: 500px;
+    width: 100%;
     padding: 20px;
     border-radius: 10px;
     margin: 0 auto;
 }
 
 fieldset {
-    display: flex;
+    width: 100%;
+    display: inline-flex ;
     flex-flow: column nowrap;
-    padding-bottom: 50px;
+    padding-bottom: 50px;   
 }
 
 fieldset * {

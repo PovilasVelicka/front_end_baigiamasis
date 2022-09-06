@@ -5,34 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TO DO app</title>
-    <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
     <header>
-        <img src="./images/ToDo-List.ico" alt="logo">
-        <h1>YOUR TO DO list</h1>
-        <a href="./pages/login.html">Log in</a>
-        <a href="./pages/registration.html">Registration</a>
     </header>
     <nav></nav>
     <main>
         <article>
-
+            <form action="/api/todo">
+                <input name="userName" type="text">
+            </form>
         </article>
     </main>
-    <footer>
-        <div class="cookies">
-            <p>We use cookies to personalize content and ads to provide social media features and to analyze our
-                traffic.
-                By clicking "Accept Cookies", exiting this banner or continuing to use our site, you accept our use of
-                cookies. You can change your preferences in
-                "Cookie Settings"</p>
-            <button id="acceptCookie" type="submit">Accept Cookie</button>
-        </div>
-    </footer>
-    <script src="./js/index.js"></script>
+   
 </body>
 
 </html>

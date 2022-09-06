@@ -1,4 +1,5 @@
 let _userInformation = null;
+const _toDoApiUrl = 'https://localhost:7171/api/ToDo'
 const _messageStyles = { complete: 'ok', information: 'info', error: 'err' }
 
 document.getElementById('acceptCookie').addEventListener('click', () => {
@@ -24,10 +25,8 @@ window.onload = () => {
             || document.location.href.endsWith('/index.html')
         )) {
             document.location.href = '../pages/login.html';
-
         }
-    }
-    else {
+    } else {
         if (document.getElementById('userName')) {
             document.getElementById('userName').innerHTML = `${_userInformation.userName}`
             document.getElementById('userEmail').innerHTML = `${_userInformation.email}`
@@ -35,12 +34,15 @@ window.onload = () => {
     }
 }
 
-
 const fetchForm = (formEvent, ifOkMethod, ifErrorMethod) => {
     formEvent.preventDefault()
+    apiRequest(requestInit(formEvent), requestInfo(formEvent), ifOkMethod, ifErrorMethod)
+}
+
+function apiRequest(url, header, ifOkMethod, ifErrorMethod) {
     fetch(
-        requestInit(formEvent),
-        requestInfo(formEvent)
+        url,
+        header
     ).then(async res => {
         if (!res.ok) {
             const text = await res.text();
@@ -55,23 +57,21 @@ const fetchForm = (formEvent, ifOkMethod, ifErrorMethod) => {
     })
 }
 
-const requestInfo = (formEvent) => {
-    if (formEvent.target.method === 'get') return null
-    return (formEvent.target.action, {
-        method: formEvent.target.method,
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(Object.fromEntries(new FormData(formEvent.target)))
-    })
-}
-
 const requestInit = (formEvent) => {
     if (formEvent.target.method !== 'get') return formEvent.target.action
     const data = Object.fromEntries(new FormData(formEvent.target))
     return formEvent.target.action + '?' + Object.keys(data).map(function (k) {
         return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
     }).join('&')
+}
+
+const requestInfo = (formEvent) => {
+    if (formEvent.target.method === 'get') return null
+    return (formEvent.target.action, {
+        method: formEvent.target.method,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(formEvent.target)))
+    })
 }
 
 // to use it setOnLoadWindowNotify('your text here',_messageStyles.complete)
@@ -109,3 +109,17 @@ const showNotify = (message, messageStyle) => {
     sessionStorage.removeItem('notify-message')
 }
 
+const groupBy = function (xs, key) {
+    return xs.reduce(function (rv, x) {
+        (rv[x[key]] = rv[x[key]] || []).push(x);
+        return rv;
+    }, {});
+};
+
+function removeChildElements(parentId, childClassName) {
+    const parentElement = document.getElementById(parentId)
+    if (parentElement.querySelectorAll('.' + childClassName)) {
+        parentElement.querySelectorAll('.' + childClassName)
+            .forEach(element => element.remove())
+    }
+}

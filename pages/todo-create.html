@@ -24,20 +24,28 @@
 
     <main>
         <aside class="left-aside">
-            <div class="circle-holder"></div>
+
         </aside>
         <article class="todo-list">
             <header>
 
             </header>
-            <div id="todoItems">
-                <div class="todo-item">
-                    <input type="radio" name="" id="">
-                    <span>Kavos</span>
-                </div>
-            </div>
+            <form action="https://localhost:7171/api/ToDo" method="post">
+                <fieldset>
+                    <legend>Create new ToDo item</legend>
+                    <input id="userId" type="text" name="userId" id="userId" style="display: none;">
+                    <label for="type">List type</label>
+                    <input  required="true" type="text" name="type" id="type">
+                    <label for="content">ToDo content</label>
+                    <input  required="true" type="text" name="content" id="content">
+                    <label for="endDate">End date</label>
+                    <input  required="true" type="datetime-local" name="endDate" id="endDate">
+                    <button id="submit" type="submit" >Create ToDo item</button>
+                    <div><a href="./todo-list.html">Back</a></div>
+                </fieldset>
+            </form>
 
-            <a href="./todo-create.html">Create ToDo</a>
+
 
         </article>
         <aside class="right-aside">
@@ -55,7 +63,7 @@
         </div>
     </footer>
     <script type="text/javascript" src="../js/index.js"></script>
-    <script type="text/javascript" src="../js/todo-list.js"></script>
+    <script type="text/javascript" src="../js/todo-create.js"></script>
 </body>
 
 </html>
