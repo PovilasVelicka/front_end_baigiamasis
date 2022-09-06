@@ -2,19 +2,10 @@ article {
     display: flex;
 }
 
-.article-menu {
-    display: flex;
-    flex-flow: row wrap;
-    padding: 10px;
-}
 
-.article-menu button {
-    width: 150px;
-    height: 50px;
-    margin: 7px;
-}
 
-.left-aside {
+.left-aside,
+.right-aside {
     display: inline-flex;
     flex-flow: column nowrap;
     align-items: flex-end;
@@ -60,24 +51,52 @@ article {
 .todo-list {
     display: flex;
     flex-flow: column nowrap;
-    border: 1px solid #CDCDCD;
+    /* border: 1px solid #CDCDCD; */
 
 
 }
 
 .todo-list header {
-    height: 150px;
-    background-color: blueviolet;
+    height: 100px;
+    border: 0px none;
+    background-image: url('../images/task_management.svg');
+    background-color: #EBEDED;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+
+
+
+}
+
+.article-menu {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 10px;
+
+
+}
+
+.article-menu button {
+    width: 150px;
+    height: 50px;
+    margin: 7px;
 }
 
 .todo-items {
     display: flex;
     flex-flow: column nowrap;
+    overflow-y: auto;
+    max-height: calc(100vh - 300px)
 }
-.todo-item{
+
+.todo-item {
     display: flex;
     flex-flow: column nowrap;
 }
+
 .todo-item-header {
     height: 30px;
     display: flex;
@@ -99,16 +118,16 @@ article {
 
 .todo-item-header input {
     width: 30px;
-    margin:5px;
+    margin: 5px;
 }
 
 .type-field {
     flex: 1;
 }
-.content-field{
+
+.content-field {
     flex: 1;
     background-color: #EBEDED;
     margin: 0 5px;
     padding: 10px 10px 10px 50px;
 }
-

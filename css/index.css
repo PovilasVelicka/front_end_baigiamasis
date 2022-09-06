@@ -11,7 +11,7 @@ body header {
     flex-flow: row nowrap;
     background-color: #ffffff;
     border: 1px solid black;
-    align-items: center;
+    
 }
 
 body header * {
@@ -55,7 +55,7 @@ body header a {
 body {
     margin: 0;
     background: linear-gradient(rgb(234, 230, 255), rgb(255, 255, 255)) no-repeat;
-    height: calc(100vh - 101px);
+    height: 100vh;
 }
 
 main {
