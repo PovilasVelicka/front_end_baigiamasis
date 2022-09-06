@@ -64,6 +64,7 @@ main {
 
 article {
     flex: 2;
+    max-width: 1500;
     margin: 0 auto;
     height: calc(100vh - 101px);
 }
