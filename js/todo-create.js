@@ -3,6 +3,10 @@ document.getElementById('logOff').addEventListener('click', () => {
     document.location.reload()
 })
 
+window.addEventListener('load', () => { 
+    if(selectedListType()) document.getElementById('todoType').value = selectedListType()
+})
+
 document.querySelector('form').addEventListener('submit', (event) => {
     fetchForm(event, registrationComplete, registrationError)
 });
