@@ -4,7 +4,7 @@ document.getElementById('logOff').addEventListener('click', () => {
 })
 
 window.addEventListener('load', () => { 
-    if(selectedListType()) document.getElementById('todoType').value = selectedListType()
+    if(selectedListType()) document.getElementById('type').value = selectedListType()
 })
 
 document.querySelector('form').addEventListener('submit', (event) => {

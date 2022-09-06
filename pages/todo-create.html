@@ -33,7 +33,8 @@
             <form action="https://localhost:7171/api/ToDo" method="post">
                 <fieldset>
                     <legend>Create new ToDo item</legend>
-                    <input id="userId" type="text" name="userId" id="userId" style="display: none;">
+                  
+                    <input type="hidden" name="userId" id="userId">
                     <label for="type">List type</label>
                     <input id="type" required="true" type="text" name="type">
                     <label for="endDate">End date</label>
