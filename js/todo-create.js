@@ -3,15 +3,15 @@ document.getElementById('logOff').addEventListener('click', () => {
     document.location.reload()
 })
 
-window.addEventListener('load', () => { 
-    if(selectedListType()) document.getElementById('type').value = selectedListType()
+window.addEventListener('load', () => {
+    if (selectedListType()) document.getElementById('type').value = selectedListType()
 })
 
 document.querySelector('form').addEventListener('submit', (event) => {
     fetchForm(event, registrationComplete, registrationError)
 });
 
-document.getElementById('submit').addEventListener('mousedown',(e)=>{
+document.getElementById('submit').addEventListener('mousedown', (e) => {
     const parent = document.getElementById('userId')
     parent.value = _userInformation.id
 })

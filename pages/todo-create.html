@@ -12,47 +12,39 @@
 
 <body>
     <header>
-        <img id="logo"  src="../images/ToDo-List.ico" alt="logo">
+        <img id="logo" src="../images/ToDo-List.ico" alt="logo">
         <h1>YOUR TO DO list</h1>
         <div class="user-info">
             <span id="userName"> </span>
             <span id="userEmail"> </span>
         </div>
         <a id="logOff" href="../index.html">Log off</a>
-
     </header>
 
     <main>
-        <aside class="left-aside">
+        <aside class="left-aside"></aside>
 
-        </aside>
         <article class="todo-list">
-            <header>
-
-            </header>
+            <header></header>
             <form action="https://localhost:7171/api/ToDo" method="post">
                 <fieldset>
-                    <legend>Create new ToDo item</legend>
-                  
+                    <legend>Create new<strong>YOUR TO DO list</strong>item</legend>
                     <input type="hidden" name="userId" id="userId">
                     <label for="type">List type</label>
                     <input id="type" required="true" type="text" name="type">
                     <label for="endDate">End date</label>
                     <input required="true" type="datetime-local" name="endDate" id="endDate">
-                    <label for="content">ToDo content</label>             
+                    <label for="content">ToDo content</label>
                     <textarea name="content" id="content" cols="30" rows="10" required="true"></textarea>
                     <button id="submit" type="submit">Create ToDo item</button>
                     <div><a href="./todo-list.html">Back</a></div>
                 </fieldset>
             </form>
-
-
-
         </article>
-        <aside class="right-aside">
 
-        </aside>
+        <aside class="right-aside"> </aside>
     </main>
+
     <footer>
         <div class="cookies">
             <p>We use cookies to personalize content and ads to provide social media features and to analyze our
@@ -63,6 +55,7 @@
             <button id="acceptCookie" type="submit">Accept Cookie</button>
         </div>
     </footer>
+
     <script type="text/javascript" src="../js/index.js"></script>
     <script type="text/javascript" src="../js/todo-create.js"></script>
 </body>

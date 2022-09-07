@@ -11,18 +11,20 @@
 
 <body>
     <header>
-        <img id="logo"  src="../images/ToDo-List.ico" alt="logo">
+        <img id="logo" src="../images/ToDo-List.ico" alt="logo">
         <h1>YOUR TO DO list</h1>
         <a href="../index.html">Home</a>
     </header>
-    <nav></nav>
+
     <main>
+        <aside></aside>
+
         <article>
             <form action="https://localhost:7171/api/Auth" method="post">
                 <fieldset>
                     <legend>Registration form</legend>
                     <label for="userName">User name</label>
-                    <input type="text" required="true" name="userName" id="userName" >
+                    <input type="text" required="true" name="userName" id="userName">
                     <label for="password">Password</label>
                     <input type="password" required="true" name="password" id="password">
                     <label for="email">Email</label>
@@ -31,7 +33,10 @@
                 </fieldset>
             </form>
         </article>
+
+        <aside></aside>
     </main>
+
     <footer>
         <div class="cookies">
             <p>We use cookies to personalize content and ads to provide social media features and to analyze our
@@ -42,6 +47,7 @@
             <button id="acceptCookie" type="submit">Accept Cookie</button>
         </div>
     </footer>
+
     <script type="text/javascript" src="../js/index.js"></script>
     <script type="text/javascript" src="../js/registration.js"></script>
 </body>

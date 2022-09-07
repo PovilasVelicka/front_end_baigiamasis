@@ -3,7 +3,7 @@ document.querySelector('form').addEventListener('submit', (event) => {
 });
 
 function registrationComplete(data) {
-    setOnLoadWindowNotify('Complete registration, please login', _messageStyles.complete)
+    setOnLoadWindowNotify('Registration complete, please login', _messageStyles.complete)
     document.location.href = './login.html'
 }
 

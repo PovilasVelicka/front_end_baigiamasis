@@ -1,7 +1,7 @@
 
 
 const refreshItemsFromApi = (refreshMethod) => { apiRequest(_toDoApiUrl, null, refreshMethod, errorMessage) }
-const deleteToDoItem = (id, ifOkMethod) => { apiRequest(_toDoApiUrl + '/' + id, { method: 'DELETE' }, itemDeletedComplete, errorMessage) }
+const deleteToDoItem = (id, ifOkMethod) => { apiRequest(_toDoApiUrl + '/' + id, { method: 'DELETE' }, itemDeletedCompleteMessage, errorMessage) }
 let toDoGroupedItems;
 
 window.addEventListener('load', () => refreshItemsFromApi(updateDocumentVeiw))
@@ -41,11 +41,11 @@ function updateDocumentVeiw(todoItems) {
         todoItems.filter(x => x.userId === _userInformation.id),
         'type'
     )
-    showToDoItems()
-    showToDoListItems()
+    showToDoItemTypes()
+    showItemsBySelectedType()
 }
 
-function showToDoItems() {
+function showToDoItemTypes() {
     const holder = document.querySelector('.left-aside')
     if (holder.querySelectorAll('.list-item')) holder.querySelectorAll('.list-item').forEach(item => item.remove())
 
@@ -75,7 +75,7 @@ function showToDoItems() {
     }
 }
 
-function showToDoListItems(items) {
+function showItemsBySelectedType(items) {
     removeChildElements('todoItems', 'todo-item')
     const holder = document.getElementById('todoItems')
     for (i = 0; i < Object.keys(toDoGroupedItems).length; i++) {
@@ -130,7 +130,7 @@ function errorMessage(errMessage) {
     showNotify(errMessage, _messageStyles.error)
 }
 
-function itemDeletedComplete() {
+function itemDeletedCompleteMessage() {
     showNotify('ToDo item deleted sucessfuly', _messageStyles.complete)
     refreshItemsFromApi(updateDocumentVeiw)
 }

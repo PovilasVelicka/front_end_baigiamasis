@@ -20,7 +20,6 @@ function updateEditForm(jsonValue) {
     form.endDate.value = jsonValue.endDate
     form.userId.value = jsonValue.userId
     form.todoId.value = jsonValue.id
-
 }
 
 function updateComplete(item) {

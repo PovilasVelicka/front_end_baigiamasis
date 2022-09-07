@@ -11,16 +11,18 @@
 
 <body>
     <header>
-        <img  id="logo" src="../images/ToDo-List.ico" alt="logo">
-        <h1>YOUR TO DO list</h1>     
+        <img id="logo" src="../images/ToDo-List.ico" alt="logo">
+        <h1>YOUR TO DO list</h1>
         <a href="../index.html">Home</a>
     </header>
-    <nav></nav>
+
     <main>
+        <aside></aside>
+
         <article>
             <form action="https://localhost:7171/api/Auth" method="get">
                 <fieldset>
-                    <legend>Login in to Your TO DO list</legend>
+                    <legend>Login in to<strong>YOUR TO DO list</strong></legend>
                     <label for="username">User name</label>
                     <input type="text" required="true" name="username" id="username">
                     <label for="password">Password</label>
@@ -30,6 +32,8 @@
                 </fieldset>
             </form>
         </article>
+
+        <aside></aside>
     </main>
 
     <footer>
@@ -40,7 +44,7 @@
                 cookies. You can change your preferences in
                 "Cookie Settings"</p>
             <button id="acceptCookie" type="submit">Accept Cookie</button>
-            
+
         </div>
     </footer>
 

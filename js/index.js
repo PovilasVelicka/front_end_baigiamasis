@@ -8,7 +8,6 @@ document.getElementById('acceptCookie').addEventListener('click', () => {
     document.querySelector('footer').style = ('display: none;')
 })
 
-
 window.onload = () => {
     if (!sessionStorage.getItem('accepted_cookies')) {
         document.querySelector('footer').style = ('display: block;')
@@ -76,7 +75,7 @@ const requestInfo = (formEvent) => {
     })
 }
 
-// to use it setOnLoadWindowNotify('your text here',_messageStyles.complete)
+// HowTo: setOnLoadWindowNotify('your text here',_messageStyles.complete)
 const setOnLoadWindowNotify = (text, style) => sessionStorage.setItem('notify-message', JSON.stringify({ message: text, messageStyle: style }))
 
 const showNotify = (message, messageStyle) => {

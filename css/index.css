@@ -18,7 +18,7 @@ main {
     flex-flow: row nowrap;
 }
 
-body header {   
+body header {
     height: 100px;
     display: flex;
     flex-flow: row nowrap;
@@ -63,13 +63,9 @@ body header a {
     text-align: center;
 }
 
-
-
 article {
     flex: 2;
     max-width: 1500;
-    /* margin: 0 auto; */
-    /* height: calc(100vh - 101px); */
 }
 
 aside {
@@ -116,12 +112,13 @@ footer {
     display: none;
 }
 
-.about{
+.about {
     text-align: center;
-    margin:150px auto;
+    margin: 150px auto;
 
 }
-.about a{
+
+.about a {
     display: block;
     margin: 30px auto;
     border-radius: 10px;
@@ -132,6 +129,7 @@ footer {
     color: #FFFFFF;
     text-decoration: none;
 }
+
 .cookies {
     display: flex;
     flex-flow: column nowrap;
