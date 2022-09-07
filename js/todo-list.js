@@ -55,9 +55,16 @@ function showToDoItems() {
         div.className = 'list-item'
         const link = document.createElement('a')
         div.addEventListener('click', (e) => {
+            let itemText;
+            const event = e
+            if (event.target.childElementCount > 0) {
+                itemText = event.path[0].childNodes[0].textContent
+            } else {
+                itemText = event.path[1].children[0].textContent
+            }
             e.className = 'list-item selected';
-            sessionStorage.setItem(`${_userInformation.id}selectedListType`, e.target.innerText)
-            showToDoListItems(e.target.innerText)
+            sessionStorage.setItem(`${_userInformation.id}selectedListType`, itemText)
+            showToDoListItems(itemText)
         })
         const span = document.createElement('span')
         link.textContent = Object.keys(toDoGroupedItems)[i]

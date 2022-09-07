@@ -11,37 +11,33 @@ article {
 }
 
 
-.left-aside div {
+.left-aside .list-item {
     max-width: 500px;
     width: 100%;
     padding: 5px 20px;
+    margin: 5px;
     display: flex;
     flex-flow: row nowrap;
     color:#FFFFFF;
-    
+    background-color: brown;
+
 }
 
 .left-aside .list-item:hover {
     background-color: #717171;
+    box-shadow: 2px 2px 10px goldenrod;
 }
 
 .left-aside .list-item span {
     width: 70px;
     padding: 10px;
     text-align: right;
-    cursor: pointer;
-   
+    cursor: pointer;   
 }
 
 .left-aside .list-item a {
     flex: 1px;
     padding: 10px;
-}
-
-.left-aside .list-item input {
-    flex: 1px;
-    padding: 10px;
-    border-radius: 10px;
 }
 
 .circle-holder {
@@ -52,9 +48,6 @@ article {
 .todo-list {
     display: flex;
     flex-flow: column nowrap;
-    /* border: 1px solid #CDCDCD; */
-
-
 }
 
 .todo-list header {
