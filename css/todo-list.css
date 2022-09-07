@@ -19,20 +19,21 @@ article {
     display: flex;
     flex-flow: row nowrap;
     color:#FFFFFF;
-    background-color: brown;
+    background-color: rgb(0, 0, 183);
+    cursor: pointer;
 
 }
 
 .left-aside .list-item:hover {
-    background-color: #717171;
-    box-shadow: 2px 2px 10px goldenrod;
+    background-color: rgb(0, 116, 10);
+
 }
 
 .left-aside .list-item span {
     width: 70px;
     padding: 10px;
     text-align: right;
-    cursor: pointer;   
+  
 }
 
 .left-aside .list-item a {
