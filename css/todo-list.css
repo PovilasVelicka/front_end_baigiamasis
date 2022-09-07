@@ -49,9 +49,8 @@ article {
     flex-flow: column nowrap;
 }
 
-.todo-list header {
-    height: 100px;
-    border: 0px none;
+body header {
+   
     background-image: url('../images/task_management.svg');
     background-color: #297FB8;
     background-position: center;

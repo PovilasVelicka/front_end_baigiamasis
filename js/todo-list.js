@@ -64,7 +64,7 @@ function showToDoItemTypes() {
             }
             e.className = 'list-item selected';
             sessionStorage.setItem(`${_userInformation.id}selectedListType`, itemText)
-            showToDoListItems(itemText)
+            showItemsBySelectedType(itemText)
         })
         const span = document.createElement('span')
         link.textContent = Object.keys(toDoGroupedItems)[i]

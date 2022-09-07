@@ -9,10 +9,12 @@ body {
     flex-flow: column;
     margin: 0;
     background: linear-gradient(rgb(234, 230, 255), rgb(255, 255, 255)) no-repeat;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 main {
+    margin-top: 100px;
+
     flex: 1;
     display: flex;
     flex-flow: row nowrap;
@@ -24,6 +26,10 @@ body header {
     flex-flow: row nowrap;
     background-color: #ffffff;
     border: 1px solid black;
+    position: fixed;
+    left: 0;
+    bottom: calc(100vh-100px);
+    width: 100%;
 }
 
 body header * {
@@ -66,6 +72,7 @@ body header a {
 article {
     flex: 2;
     max-width: 1500;
+    padding-top: 50px;
 }
 
 aside {
@@ -103,7 +110,6 @@ footer {
     border: 1px solid black;
     width: 100%;
     min-height: 100px;
-    position: absolute;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -114,7 +120,7 @@ footer {
 
 .about {
     text-align: center;
-    margin: 150px auto;
+    margin: 50px auto;
 
 }
 
@@ -130,6 +136,31 @@ footer {
     text-decoration: none;
 }
 
+.about-block {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 10px;
+
+}
+
+.about-block div {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: left;
+    padding: 5px;
+}
+
+.about-block img,
+p {
+    flex: 1;
+    width: 300px;
+    margin: 10px;
+}
+
+
 .cookies {
     display: flex;
     flex-flow: column nowrap;
@@ -140,6 +171,7 @@ footer {
 
 .cookies p {
     text-align: center;
+    width: 100%;
 }
 
 .cookies button {

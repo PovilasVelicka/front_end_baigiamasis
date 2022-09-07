@@ -63,7 +63,9 @@ function apiRequest(url, header, ifOkMethod, ifErrorMethod) {
                     break;
             }
         }  
-        ifErrorMethod(errMessage ? errMessage : 'Unexpected error')
+        
+        ifErrorMethod(errMessage ? errMessage : `Unexpected error. Please check if the test api ${_toDoApiUrl} is started.
+        <br/>If you do not have this api server, you can download it from <a href="https://github.com/Matikas/ToDo-API">GitHub</a>`)
     })
 }
 
@@ -118,13 +120,13 @@ const showNotify = (message, messageStyle) => {
     document.body.append(notifyWindow)
     notifyWindow.querySelector('span').innerHTML = message
 
-    notifyWindow.style.opacity = '.9'
+    notifyWindow.style.opacity = '.8'
     setTimeout(() => {
         notifyWindow.style.opacity = '0'
         setTimeout(() => {
             notifyWindow.remove();
         }, 1000);
-    }, 2000)
+    }, 4000)
     sessionStorage.removeItem('notify-message')
 }
 
