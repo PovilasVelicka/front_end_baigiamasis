@@ -1,7 +1,7 @@
 let _userInformation = null;
 const _toDoApiUrl = 'https://localhost:7171/api/ToDo'
 const _messageStyles = { complete: 'ok', information: 'info', error: 'err' }
-const selectedListType = () => sessionStorage.getItem(`${_userInformation === null ? '' : _userInformation.id}selectedListType`)
+const selectedListType = () => sessionStorage.getItem(`${_userInformation.id}selectedListType`)
 
 if (document.getElementById('logo')) document.getElementById('logo').addEventListener('click', () => document.location.href = '../index.html')
 

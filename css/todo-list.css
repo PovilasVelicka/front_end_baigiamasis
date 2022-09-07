@@ -31,7 +31,6 @@ article {
     width: 70px;
     padding: 10px;
     text-align: right;
-
 }
 
 .left-aside .list-item a {
@@ -49,8 +48,7 @@ article {
     flex-flow: column nowrap;
 }
 
-body header {
-   
+body header {   
     background-image: url('../images/task_management.svg');
     background-color: #297FB8;
     background-position: center;
