@@ -47,15 +47,33 @@ function apiRequest(url, header, ifOkMethod, ifErrorMethod) {
     ).then(async res => {
         if (!res.ok) {
             const text = await res.text();
-            throw new Error(text);
+            throw text;
         } else {
             return res.text()
         }
     }).then(data => {
         ifOkMethod(data ? JSON.parse(data) : {})
     }).catch(err => {
-        ifErrorMethod(err)
+        let errMessage;
+        if (isJsonString(err)) {
+            const js = JSON.parse(err)
+            switch (true) {
+                case 'error' in js:
+                    errMessage = js.error
+                    break;
+            }
+        }  
+        ifErrorMethod(errMessage ? errMessage : 'Unexpected error')
     })
+}
+
+function isJsonString(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
 }
 
 const requestInit = (formEvent) => {
