@@ -1,7 +1,7 @@
 
 
 const refreshItemsFromApi = (refreshMethod) => { apiRequest(_toDoApiUrl, null, refreshMethod, errorMessage) }
-const deleteToDoItem = (id, ifOkMethod) => { apiRequest(_toDoApiUrl + '/' + id, { method: 'DELETE' }, itemDeletedCompleteMessage, errorMessage) }
+const deleteToDoItem = (id, ifOkMethod) => { apiRequest(_toDoApiUrl + '/' + id, { method: 'DELETE' }, ifOkMethod, errorMessage) }
 let toDoGroupedItems;
 
 window.addEventListener('load', () => refreshItemsFromApi(updateDocumentVeiw))
@@ -14,7 +14,7 @@ document.getElementById('deleteTodo').addEventListener('click', () => {
         .forEach(r => {
             if (r.checked) {
                 if (confirm('Are You shure you want to delete ToDo item?')) {
-                    deleteToDoItem(r.id, 'ToDo item deleted sucessfuly!')
+                    deleteToDoItem(r.id, itemDeletedCompleteMessage)
                 }
             }
         })
