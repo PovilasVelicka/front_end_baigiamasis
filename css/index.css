@@ -120,7 +120,9 @@ footer {
 .about {
     text-align: center;
     margin: 50px auto;
-
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
 }
 
 .about a {
@@ -140,7 +142,6 @@ footer {
     flex-flow: row wrap;
     align-items: center;
     padding: 10px;
-
 }
 
 .about-block div {
@@ -150,6 +151,7 @@ footer {
     align-items: center;
     text-align: justify;
     padding: 5px;
+   
 }
 
 .about-block img,
